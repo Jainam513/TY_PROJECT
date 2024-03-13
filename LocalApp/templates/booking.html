@@ -1,0 +1,114 @@
+
+{% load static %}
+<html>
+<head>
+    <title>LSSES Booking</title>
+</head>
+<style>
+    label{
+        color:black;
+    }
+</style>
+<body>
+{% include 'navigation.html' %}
+<hr class="mt-0">
+<div class="card shadow m-5" id="signupform">
+    <div class="card-body">
+        <div class="container-fluid">
+            <h5 class="p-2" style="border-bottom: 2px solid orange;color:green">Confirm Booking Detail</h5>
+            <form method="post" name="booking" >
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" name="fname" id="fname" placeholder="Enter First Name" value="{{user.user.first_name}}" readonly class="form-control"
+                                   pattern="[A-Za-z]+">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lname" value="{{user.user.last_name}}" placeholder="Enter Last Name" readonly class="form-control"
+                                   pattern="[A-Za-z]+">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Email ID</label>
+                            <input type="email" name="email" placeholder="Email Address" value="{{user.user.username}}" readonly required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="contact">Contact</label>
+                            <input type="text" name="mobile" placeholder="Contact Number" value="{{user.mobile}}" readonly required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea name="address" class="form-control" placeholder="Full Address" readonly>{{user.address}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Total Price(Rs.)</label>
+                            <input type="text" name="total" class="form-control" value="{{total}}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <a href="payment.html">
+                    <input type="submit" id="pay-btn"value="Click To Procced Online Payment" class="m-2 px-3 btn btn-primary">
+                </a>
+                {% comment %} <a href="/offline_booking/">
+                    <input type="submit" id="pay-btn"value="Click To Procced Offline/ Cash On  Payment" class="m-2 px-3 btn btn-primary">
+                </a> {% endcomment %}
+                {% comment %} <li class="nav-item">
+                    <a href="/offline_booking/" class="nav-link text-dark bg-light">
+                        {% comment %} <i class="fas fa-cog mr-3 text-primary fa-fw"></i> {% endcomment %}
+                        {% comment %} offline_booking
+                    </a>
+                </li> {% endcomment %} 
+                {% comment %} <script src="https://checkout.razorpay.com/v1/checkout.js"></script> {% endcomment %}
+    {% comment %} <script>
+      var options = {
+        amount = "{{amount}}"
+        key: "rzp_test_I9DANSLk2wH5Ib",
+        name: "Service At Home",
+        order_id: "{{order_id}}", 
+        callback_url: "{{ callback_url }}",
+        handler : function(response){
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature)
+        }
+        theme{
+            color:#F37254;
+        }
+      };
+       
+      // initialise razorpay with the options.
+      var rzp1 = new Razorpay(options);
+       
+      // add event listener to the payment button.
+      document.getElementById("pay-btn").onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+      };
+    </script> {% endcomment %}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

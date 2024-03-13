@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<div class ="text-center">
+    {% csrf_token %}
+    <img src="https://www.chevdor.com/post/2020/07/14/reg-updates/featured.png" class="image-fluid" style="height:200px">
+    <h3 "mt-8"> Worker Payment SuccessFully Done</h3>
+    <button "btn btn-success" href="/admindashboard/">Page</button>
+
+    <div>   <a href="/" class="btn btn-success">BACK</a></div>
+ 
+    {% block main %}
+    {% comment %} {% block  content %} {% endcomment %}
+    {% endblock %}
+</body>
+</html>
+

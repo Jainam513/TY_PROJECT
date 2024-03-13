@@ -1,0 +1,41 @@
+
+{% include 'navigation.html' %}
+
+<style>
+  center{
+    font-size:30px;
+  }
+  .card-img-top{
+    width:350px;
+    height:200px;
+  }
+</style>
+<div class="container p-3 my-3 bg-dark text-white">
+<center>
+
+  {% if searched %}
+
+        You Searched for {{searched}}
+        <br><br>
+        {% for j in services %}
+        <img class="card-img-top img-thumbnail" src="{{j.image.url}}" style="width=50px; height=50px" alt="card-img"><br>
+
+       <p>{{j}}</p>
+       <p>Price : {{j.price}}</p>
+
+       {% comment %} <button type="submit" class="btn btn-primary">Add to Cart</button> {% endcomment %}
+       <a href="/add-to-cart/{{j.id}}/" class="btn btn-primary">
+        <i class="fa fa-shopping-cart"></i> Book Now</a>
+        <br> <br>
+
+        {% endfor %}
+
+  {% else %}
+
+        Hey!! You Forgot to Search.. 
+
+  {% endif %}
+</center>
+
+
+</div>

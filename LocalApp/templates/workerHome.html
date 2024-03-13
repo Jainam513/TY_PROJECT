@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/worker_home.css' %}">
+    <style>
+        .left{
+			display:inline-block;   
+			position: absolute;
+			top: 0px;
+		left: 0%;
+		width: 700px;
+		height: 250px;
+			font-family: 'Dancing Script', cursive;
+		font-family: 'Sansita Swashed', cursive;
+	
+		}
+		.left img{
+			margin-left:-77px;
+		margin-left: 380px;
+		border-radius:10%;
+		margin-top: 120px;
+		mix-blend-mode:multiply;
+		height:600px;
+		width: 900px;
+	
+		}
+    </style>
+</head>
+
+{% include 'Workernav.html' %}
+{% comment %} {% include 'navigation.html' %} {% endcomment %}
+
+<div class="left">
+    <img src="\static\images\home1.jpeg" alt="" srcset="">
+    {% comment %} <img src="\static\images\o1.jpg" alt="" srcset=""> {% endcomment %}
+
+  {% comment %} <img src="\static\images\temp1.jpeg" alt="" srcset=""> {% endcomment %}
+</div>
+</html>

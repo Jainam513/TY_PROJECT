@@ -1,0 +1,177 @@
+{% include 'navigation.html' %}
+{% load static %}
+<html>
+<head>
+    <script>
+        function checkpass()
+        {
+          if(document.signup.pwd.value!=document.signup.cpwd.value)
+          {
+            alert('Password doesnt match with confirm password.');
+            document.signup.cpwd.focus();
+            return false;
+          }
+          return true;
+        }
+      </script>
+    {% comment %} <script>
+    function checkpass()
+    {
+        if(document.signup.pwd.value!=document.signup.cpwd.value)
+        {
+            alert('Password and Repeat Password field does not match');
+            document.signup.cpwd.focus();
+            return false;
+        }
+        return true;
+    }
+
+    </script> {% endcomment %}
+
+</head>
+{% comment %} <body id ="registration"style = "background-image : url({% static 'images/REE.jpg' %})"> {% endcomment %}
+    <body id="login" style = "background-image : url({% static 'images/wh.jpg' %})">
+<hr class="mt-0">
+
+<div class="card shadow m-5" id="signupform">
+    <div class="card-body">
+
+        <div class="container-fluid">
+            <h5 class="p-2" style="border-bottom: 2px solid orange;color:green">Create an Account</h5>
+            <form method="POST" name="signup" onsubmit="return checkpass();" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Username</label>
+                            <input type="text" name="uname" placeholder="Enter First Name" class="form-control"
+                                 required  pattern="[A-Za-z]+">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                          <label class="fill"> password</label>
+                          <input type="password" name="pwd" placeholder="Enter password" required class="form-control">
+
+                      </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="fill">Confirm password</label>
+                        <input type="password" name="cpwd" placeholder="Enter password" required class="form-control">
+
+                    </div>
+                </div>
+
+                    {% comment %} <div class="row">
+                        <div class="col-md-6 mb-4">  
+        
+                          <div class="form-outline">
+                            <label class="form-label">Password</label>
+                            <input type="password" name="pwd" class="form-control form-control-lg" />
+                          </div>
+        
+                        </div> {% endcomment %}
+                        {% comment %} <div class="col-md-6 mb-4">
+        
+                          <div class="form-outline">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password"  name="cpwd" class="form-control form-control-lg" />
+                          </div>
+        
+                        </div>
+                      </div> {% endcomment %}
+      
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">First Name</label>
+                            <input type="text" name="fname" placeholder="Enter Last Name" required class="form-control"
+                                   pattern="[A-Za-z]+">
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Last Name</label>
+                            <input type="text" name="lname" placeholder="Enter Last Name" required class="form-control"
+                                   pattern="[A-Za-z]+">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Profile Photo</label>
+                            <input type="file" name="image"  required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Upload Your any Proof</label>
+                            <input type="file" name="imgs"  required class="form-control">
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Write Your Profprofessional</label>
+                            <input type="text" name="professional"  required class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Email ID</label>
+                            <input type="email" name="email" placeholder="Email Address" required class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="fill">Phone Number</label>
+                            <input type="text" name="phoneNumber" placeholder="Contact Number" required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                          <b>  <label class="fill">Address</label><b>
+                            <textarea name="address" class="form-control" required placeholder="Full Address"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary">
+                <div class="options">
+                  <b>  Already have an account?<a href="{% url 'worker_Login' %}">Login here</a>
+                    <br><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+
+    .options{
+        color:black;
+    }
+    .fill
+    {
+        color:black;
+    }
+    .col-sm-6{
+      color:black;
+    }
+    .form-control{
+      color:black;
+    }
+</style>
+</body>
+</html>

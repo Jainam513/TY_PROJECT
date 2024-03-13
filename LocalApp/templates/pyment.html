@@ -1,0 +1,23 @@
+<html>
+{% load static %}
+<head>
+    <title>Payment Page|</title>
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}"/>
+</head>
+<body>
+  <main class="container">
+    <div class="main">
+      <!-- Payment Method Section  -->
+      <section class="payment_method">
+        <h2 class="ship_head">Payment Method</h2>
+        <div class="card_info">
+          <form action="" method="post">
+            {% csrf_token %}
+      
+        <button class="review_btn">Review and Confirm</button>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

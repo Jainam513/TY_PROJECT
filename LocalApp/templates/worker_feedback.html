@@ -1,0 +1,75 @@
+{% load static %}
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<style>
+    label{
+        color:black;
+    }
+</style>
+<body>
+{% include 'Workernav.html' %}
+<hr class="mt-0">
+<div class="card shadow m-5">
+    <div class="card-body">
+        <div class="container-fluid">
+            <h5 class="p-2" style="border-bottom: 2px solid orange;color:green">Feedback Form</h5>
+            <form method="post" name="feedback">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                {% csrf_token %}
+
+                            <input type="text" name="fname" id="fname" placeholder="Enter First Name" value="{{user.user.first_name}}" readonly class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                {% csrf_token %}
+
+                            <input type="text" name="lname" value="{{user.user.last_name}}" placeholder="Enter Last Name" readonly class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Email ID</label>
+                {% csrf_token %}
+
+                            <input type="email" name="email" placeholder="Email Address" value="{{user.user.email}}" readonly class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="contact">Contact</label>
+                {% csrf_token %}
+
+                            <input type="text" name="mobile" placeholder="Contact Number" value="{{user.mobile}}" readonly required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Write your feedback</label>
+                {% csrf_token %}
+
+                            <textarea name="feedback" class="form-control" placeholder="Write your feedback" ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="send feedback" class="m-2 px-3 btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

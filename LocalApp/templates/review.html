@@ -1,0 +1,32 @@
+{% comment %} {% extends 'navoga.html' %} {% endcomment %}
+{% block main  %}
+
+
+
+                <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>User</th>
+                    <th>View Comment</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in feedback %}
+                <tr id="row-{{forloop.counter}}">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+                    <td>{{i.user.message}}<td>
+                        <!-- Button trigger modal -->
+                        
+
+                        
+                        {% comment %} <a href="/delete-feedback/{{i.id}}/" class="text-danger"
+                           onclick="return confirm('Are You Sure?')">Delete</a></td> {% endcomment %}
+                </tr>
+           
+
+
+{% endblock %}
+<body>
+</hrml>

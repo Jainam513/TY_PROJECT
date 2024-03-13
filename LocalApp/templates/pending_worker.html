@@ -1,0 +1,103 @@
+{% extends 'admin_base.html' %}
+{% block main  %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+{% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> {% endcomment %}
+<style>
+    table tr th{
+        width: 30px;
+        text-align: center;
+        font-size:18px;
+    }
+    tbody{
+        text-align:center;
+        font-size:16px;
+    }
+   .text-success{
+    font-style:bold;
+   }
+   .pending{
+    color:black;
+    font-style:bold;
+    position:absolute;
+    border-radius:50%;
+    font-size:13px;
+    width:15px;
+    height:15px;
+    display:flex;
+    justify-content:center;
+    margin-left:10px;
+    background-color:red;
+    margin-top:-35px;
+    {% comment %} margin-top:-3; {% endcomment %}
+   }
+   #btn-nav{
+    float:right;
+    margin-right:45px;
+    font-size:20px;
+    margin-top:-30px;
+   }
+   .fa-edit{
+    font-size:20px;
+   }
+   
+   .fa-trash{
+    font-size:20px;
+    color:red;
+   }
+</style>
+
+
+<div class="card shadow">
+    <div class="card-body">
+       {% comment %} notificatin {% endcomment %}
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">All Worker
+        <div class="col-sm">
+                <a  class="text-Light" id="btn-nav">
+                    <i class="fas fa-bell text-primary"></i><span class="pending"> {{pending.count}} </span>
+                </a>
+        </div>
+        </h5>
+        <div class="container-fluid">
+
+            <table class="table table-bordered table-sm" id="example">
+                <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Worker Name</th>
+                    <th>Worker Image</th>
+                    <th>E-mail</th>
+                    <th>Contact Number</th>
+                    <th>Address</th>
+                    <th>Status</th>
+                    <th >Change Status</th>
+                    <th >Delete</th>
+                    {% comment %} <th>Action</th> {% endcomment %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in pending %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.user.first_name}}</td>
+                    <td><img src="{{i.image.url}}" style="width:150px; border-radius:50%"/></td>
+                    <td>{{i.user.email}}</td>
+                    <td>{{i.mobile}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.status}}</td>
+                    <td><a href="change_status/{{i.id}}"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="delete_worker/{{i.id}}" onclick="return confirm('Are You Sure?')" <i class="fa fa-trash"></i></a></td>
+
+                    {% comment %} <td>
+                        <a href="/edit_category/{{i.id}}/" class="text-success">Edit</a> &nbsp;  &nbsp;
+                        <a href="/delete_category/{{i.id}}/" class="text-danger"
+                           onclick="return confirm('Are You Sure?')">Delete</a></td> {% endcomment %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

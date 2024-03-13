@@ -1,0 +1,88 @@
+{% load static%}
+{% block body%}
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% comment %} {% include 'navigation.html'%} {% endcomment %}
+<marquee style = "font-size: 30px; color:white; background-color:black">Change Status of worker</marquee>
+<style>
+    .form-group{
+        margin-top:150px;
+        font-size:24px;
+        margin-left:200px;
+    }
+    #nk{
+        font-size:16px;
+    }
+</style>
+{% comment %} <label><b>Worker Name</b></label>
+<input type="text" value="{{data.user.first_name}} {{data.user.last_name}}"> {% endcomment %}
+{% comment %} 
+<form class="container mt-5" method="post">
+    {% csrf_token%}
+
+    <div class="row">
+        <div class="col-md-6 mb-4">  
+
+          <div class="form-outline">
+            <label><b>Worker Name</b></label>
+            <input type="text" value="{{data.user.first_name}} {{data.user.last_name}}">
+          </div>
+
+        </div>
+
+
+
+</form> {% endcomment %}
+
+<div class="card shadow">
+    <div class="card-body">
+        
+        <div class="container-fluid">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Worker Name</label><br>
+                            <input type="text" id="nk"value="{{data.user.first_name}} {{data.user.last_name}}" readonly> 
+                                <br><br>
+                            <label>Status</label><br>
+                            <select class="form-control" name="status">
+                                    <option value="Accept">Accept</option>
+                                    <option value="Reject">Reject</option>
+                            </select>
+                            <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary" style="width: 150px; margin-top: 50px;">
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+               
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% if error == "No" %}
+<script>
+  alert("Status changed Successfully");
+  window.location = ('{% url 'worker_Login' %}')
+</script>
+{% endif %}
+
+{% if error == "Yes" %}
+<script>
+  alert("Something wrong went happen!!");
+</script>
+{% endif %}
+
+
+{% endblock body%}

@@ -1,0 +1,78 @@
+{% load static custom_tags %}
+<head>
+    <title>My Cart</title>
+</head>
+<style>
+    .table{
+        text-align:center;
+    }
+    .red{
+        color:red;
+    }
+</style>
+{% include 'navigation.html' %}
+
+<div class="container-fluid">
+    <div class="container">
+        <h2 style="font-family:roman;font-size:bold">
+            My Cart
+            <a href="/user-product/0/" class="btn btn-warning " style="float:right">Continue Shopping</a>   
+            <a href="/booking/" class="btn btn-info mr-2" style="float:right">Book Service</a>
+        <h2>
+        <table class="table table-bordered" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>services time</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>action</th>
+                    {% comment %} <th>Quantity</th> {% endcomment %}
+                    <th>Total</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i, j in product.items %}
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="{{i|productimage}}" alt="product" style="width:100px;height:100px"></a>
+                    </td>
+                    <td><a href="/product-detail/{{i}}/">{{i|productname}}</a></td>
+                    <td>{{i|productstime}}</td>
+                    <td>{{i|productprice}}
+                    <td class="" alt="" style="width:350px;height:120px">
+                    
+                    {{i|productdes}}</td>
+                    <td><a href="/booking/" class="btn btn-info mr-2" style="float:right">Book Service</a></td>
+                    <td id="totalprice-{{forloop.counter}}">{% producttotalprice i j %}</td>
+                    <td>
+                        <a href="/deletecart/{{i}}/" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4"></td>
+                    <td colspan="5" id="total-price"></td>
+                </tr>
+            </tbody>
+
+       
+    
+        </table>
+        <h4><span class="red">Note*</span></h4>
+        <h6>Minimum Service Charge Rs. 100 is included in Total Service Amount but If You are Book any Service and denied at a time of delivering it, you mast pay 
+         <span class="red"> Minimum Service Charge 100 Rs.</span>  </h6>
+    </div>
+</div>
+
+<script>
+    var prolenth = '{{lengthpro}}';
+    var mytotal = 0;
+    for(var i=1;i<=prolenth*1;i++){
+        totalprice = parseFloat(document.getElementById('totalprice-'+i).innerHTML);
+        var mytotal = parseFloat(mytotal) + (totalprice);
+    }
+    document.getElementById('total-price').innerHTML  = mytotal;
+</script>

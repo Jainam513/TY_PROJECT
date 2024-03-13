@@ -1,0 +1,48 @@
+{% comment %} <html>
+<head>
+</head>
+
+<div class ="text-center">
+    {% csrf_token %}
+    <img src="https://www.chevdor.com/post/2020/07/14/reg-updates/featured.png" class="image-fluid" style="height:200px">
+    <h3 "mt-8">  Payment SuccessFully Done
+        Your Service IS book Service At YOur Home In 1 Hours
+    </h3>
+    <button "btn btn-success" href="/">Page</button>
+
+ </body>
+</html> {% endcomment %}
+<style>
+    h3{
+        text-align:center;
+    }
+    .image-fluid{
+        text-align:center;
+    }
+    .btn{
+        text-align:center;
+    }
+</style>
+{% block content%}
+
+<div class="global-container">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Congralulations !!</h3>
+            <div class="card-text text-center">
+                {% csrf_token %}
+                <img src="https://www.chevdor.com/post/2020/07/14/reg-updates/featured.png" class="image-fluid" style="height:200px; align-items:center;">
+                <h3 "mt-8">  Payment SuccessFully Done <br>
+                    Your Service is Booked
+                </h3>
+                <div class="text-center">
+                <a href="/" class="btn btn-success">BACK To HOME</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ {% endblock %}
+

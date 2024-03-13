@@ -1,0 +1,68 @@
+{% extends 'admin_base.html' %}
+{% comment %} <html>
+    <title>
+            Contact Form
+    </title>
+    <body>
+    <center>
+        <p> oreder detils</p>
+    </center>
+    <br><br>
+    <form method="POST" >
+         {% csrf_token %}
+         
+         <input type="text" name="name" placeholder="ENter TITLE OF email" size="45">
+         <br><br>
+         <input type="email" name="email" placeholder=" Enter Email ">
+         <br><br>
+
+         <textarea  type="text" name="message" placeholder="address"></textarea>
+         <br><br>
+         <input type="emailname" name="message" placeholder=" Enter Email ">
+         <br><br> {% endcomment %}
+         {% comment %} <input type="text" name="number" placeholder="phonenumber" size="45">
+         <br><br> {% endcomment %}
+         {% comment %} <br><input type="submit"value="Send">
+    </form>
+</body>
+<html> {% endcomment %}
+
+{% block main %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Give Order Detils To Worker</h5>
+        <div class="container-fluid">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Enter  Company Email</label>
+                                <input type="email" name="name" class="form-control" placeholder="write Company Email here"></input>
+                            </div>
+                        </div>
+                            </div>
+                        </div>  
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Enter Worker Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="write description here"></input>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label> Enter Order Detils Here</label>
+                            <textarea name="message" class="form-control" placeholder="write description here"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

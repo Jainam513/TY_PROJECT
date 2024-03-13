@@ -1,0 +1,238 @@
+
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <link rel="shortcut icon" href="static/images/h6.jpg">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/homepage.css">
+   
+</head>
+
+<style>
+  .form-controlmr-sm-2
+  {
+    color:black;
+  }
+  
+</style>
+<body>
+   <br><br>
+    <div class="slider">
+        <div class="container">
+            <div class="slider-titl row">
+                <div class="col-md-6 slidgb">
+                  
+        <br><br>
+        
+      
+                     <h1>We Promise keep you so fresh and so Clean</h1>
+                    <p>Deploy your service infrastructure on our fully redundant, high performance cloud platform and benefit from its high reliability, security and enterprise feature set.</p>
+                    <br><br>
+                    <div class="bnkji">
+                      <form method="post" action="{% url 'search' %}" class="form-inline my-2 my-lg-0">
+                        {% csrf_token %}
+                       <h1> <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searched"></h1>
+                        <button class="btn btn-info">Serach</button>
+                      </form> 
+                      
+        <br><br>
+        
+        <br><br>
+        
+                        <button class="btn btn-info" >
+                          <a href="/user-product/0/" style="color:white;">Book Service</a>
+                        </button>
+                        <button class="btn btn-info">
+                         <a href="/contact/" style="color:white;"> Contact Us</a> </button>
+
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 slid-img">
+                    <img src="static/images/image_5.jpg" alt="">
+                </div> 
+            </div>
+        </div>
+    </div>
+
+ 
+        
+        
+        
+        
+        <br><br>
+        <br><br>
+        <!-- Font Awesome CDN-->
+        <link
+          rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        <!-- Google Font -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="/static/css/home.css" />
+      </head>
+      <body>
+        <section>
+          <div class="row">
+           <b> <h2 class="section-heading">Our Services</h2><b>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-paint-roller"></i>
+                </div>
+                <h3> painter Service </h3>
+                <p>
+                  Create your dream home with our painting experts
+                  All Great Things Start Small
+                  
+Initiating small renovations or painting your home can be exciting, but choosing the right colours, products, and house painters can be a task. All the while, you also have to ensure the home interior painting job is executed on time with utmost care and safety. This is where we come in, with our aim to make painting a safe and great experience!
+
+
+                </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="icon-wrapper">
+                 <i class="fa-regular fa-shower"></i>
+                </div>
+                <h3> Plumber Service </h3>
+                <p>
+                  andling a variety of plumbing emergencies efficiently and professionally.
+        Installing pipes, drainage systems, sinks, toilets, and heating and cooling systems.
+        Testing systems for leaks and other problems.
+        Obeying health and safety codes at all times.
+        Performing inspections and providing advice to homeowners.
+        Selecting the most cost-effective, quality products for installation and repair.
+                        </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="icon-wrapper">
+                  <i class="fas fa-wrench"></i>
+                </div>
+                <h3> Ac Service </h3>
+                <p>
+                  Providing expert repair and installation services for gas and electric air conditioners, we are a pioneer in the field. Affordable, quick service. Our proficient instructors can install springs for all types of fountain brands at A.C. Sales and Service Center. Affordable AC Repair Service, Simple Solutions to Complex Problems. Adjusting clocks is what we do best.
+
+
+                </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="icon-wrapper">
+               <i class="fa-solid fa-house"></i>
+                </div>
+                <h3> home cleanning Service </h3>
+                <p>
+                  Home sweet home is the place where we can be ourselves and sleep, cook, eat, and work. So, why not ensure that your home remains the best place to live by keeping it clean every time? However not everyone can spare time to clean the entire home by themselves, so the better way is to book professional house cleaning services. Home cleaning services are a must not just when Diwali is around the corner, but otherwise too.
+
+                  You will be able to get the desired results after house cleaning services only if you hire experts like Us. 
+                </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="icon-wrapper">
+                  {% comment %} <i class="fas fa-broom"></i> {% endcomment %}
+                  <i class="fa-solid fa-child"></i>
+                </div>
+                <h3> nanny Service </h3>
+                <p>
+                  We understand the tenderness of your newborn, our NANNIES are very motherly, soft-spoken and experienced in handling new born babies.
+
+                  They specialize in taking special care to the newborn child and babies between 0-1 years. They primarily look after the new born baby and take care of bathing, massage, feeding, washing clothes etc. Her primary work responsibilities include :
+                </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="icon-wrapper">
+                  <i class="fas fa-plug"></i>
+                </div>
+                <h3>Service electricin</h3>
+                <p>
+                  Executing plans of electrical wiring for well functioning lighting, intercom and other electrical systems
+Installing electrical apparatus, fixtures and equipment for alarm and other systems
+Installing safety and distribution components
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+     
+    
+
+ 
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+<style>
+  .footer{
+    background-color:  black;;
+
+
+  }
+</style>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                {% comment %} <div class="col-md-4 col-sm-12">
+                    {% comment %} <h2>About Us</h2>
+                    <p>
+                        Smart Eye is a leading provider of information technology, consulting, and business process services. Our dedicated employees offer strategic insights, technological expertise and industry experience.
+                    </p>
+                    <p>We focus on technologies that promise to reduce costs, streamline processes and speed time-to-market, Backed by our strong quality processes and rich experience managing global... </p> {% endcomment %}
+                {% comment %} </div> {% endcomment %} 
+                <div class="col-md-4 col-sm-12">
+                    <h2>Useful Links</h2>
+                    <ul class="list-unstyled link-list">
+                      <li><a ui-sref="gallery" href="/">Home</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="about" href="/about/">About us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="portfolio" href="/contact/">contact us</a><i class="fa fa-angle-right"></i></li>
+                        <li><a ui-sref="products" href="/userlogin/">Login</a><i class="fa fa-angle-right"></i></li>
+                       
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 map-img">
+                    <h2>Contact Us</h2>
+                    <address class="md-margin-bottom-40">
+                       Local service Serach engine <br>
+                       Gujart uni road <br>
+                        <br>
+                        Phone: +91 9316800856<br>
+                        Email: <a href="#" class="">ty3112@gamil.com</a><br>
+                        
+                    </address>
+
+                </div>
+            </div>
+        </div>
+        
+
+    </footer>
+   
+
+</body>
+</html>
+{% endblock %}
