@@ -259,6 +259,7 @@
   /* ===================================== Fooer CSS ================================== */
   .footer {
     padding: 50px;
+    margin: auto;
     background-color: #3addc5;
     color: #FFF; }
     @media screen and (max-width: 940px) {
